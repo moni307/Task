@@ -1,0 +1,30 @@
+let a = 10; // global
+function show() {
+  console.log(a); // accessible here
+}
+function test() {
+  let x = 5;
+  console.log(x); // accessible here
+}
+console.log(x); // Error: x is not defined
+if (true) {
+  let y = 20;
+  console.log(y); // accessible here
+}
+console.log(y); // Error: y is not defined
+if (true) {
+  var z = 30;
+}
+console.log(z); // works, z is function-scoped or globally scoped
+function sum() {
+  let total = 0;
+  for (let i = 0; i < arguments.length; i++) {
+    total += arguments[i];
+  }
+  return total;
+}
+console.log(sum(1, 2, 3, 4)); // 10
+ function multiply(multiplier, ...numbers) {
+  return numbers.map(n => n * multiplier);
+}
+console.log(multiply(2, 1, 2, 3)); // [2, 4, 6] 
