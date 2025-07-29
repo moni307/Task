@@ -1,0 +1,74 @@
+et choice;
+
+do {
+    // Show menu
+    choice = prompt(
+        "Basic Calculator Menu:\n" +
+        "1. Add\n" +
+        "2. Subtract\n" +
+        "3. Multiply\n" +
+        "4. Divide\n" +
+        "5. Exit\n" +
+        "Enter your choice (1-5):"
+    );
+
+    switch (choice) {
+        case "1":
+        case "2":
+        case "3":
+        case "4":
+            // Get inputs
+            let num1 = prompt("Enter the first number:");
+            let num2 = prompt("Enter the second number:");
+
+            // Validate numbers
+            if (isNaN(num1) || isNaN(num2)) {
+                alert("Invalid input! Please enter numeric values.");
+                continue; // Go back to the menu
+            }
+
+            num1 = parseFloat(num1);
+            num2 = parseFloat(num2);
+
+            let result;
+
+            switch (choice) {
+                case "1":
+                    result = num1 + num2;
+                    alert(`Result: ${num1} + ${num2} = ${result}`);
+                    break;
+                case "2":
+                    result = num1 - num2;
+                    alert(`Result: ${num1} - ${num2} = ${result}`);
+                    break;
+                case "3":
+                    result = num1 * num2;
+                    alert(`Result: ${num1} * ${num2} = ${result}`);
+                    break;
+                case "4":
+                    if (num2 === 0) {
+                        alert("Error: Cannot divide by zero.");
+                        continue;
+                    }
+                    result = num1 / num2;
+                    alert(`Result: ${num1} / ${num2} = ${result}`);
+                    break;
+            }
+            break;
+
+        case "5":
+            alert("Exiting calculator. Goodbye!");
+            break;
+
+        default:
+            alert("Invalid choice! Please enter a number between 1 and 5.");
+            continue;
+    }
+
+    if (choice === "5") {
+        break;
+    }
+
+} while (true);
+
+
