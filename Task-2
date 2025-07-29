@@ -1,4 +1,4 @@
-et choice;
+let choice;
 
 do {
     // Show menu
